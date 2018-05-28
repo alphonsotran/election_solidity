@@ -9,9 +9,17 @@ contract Election {
     }
     // store candidates
     // fetch candidate
-    // store candidates count
+    mapping(uint => Candidate) public candidates;
+    // store candidates count. can't use a "hash.count". must use counter. 
+    uint public candidatesCount;
 
     function Election () public {
-      
+      addCandidate("Candidate 1");
+      addCandidate("Candidate 2");
+    }
+
+    function addCandidate (string _name) private {
+        candidatesCount ++;
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0)
     }
 }
