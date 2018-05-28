@@ -1,11 +1,17 @@
 pragma solidity ^0.4.2;
 
 contract Election {
-    // store candidate 
-    // read candidate as getter with "public"
-    string public candidate; 
+    // model a candidate
+    struct Candidate {
+        uint id;
+        string name;
+        uint votecount;
+    }
+    // store candidates
+    // fetch candidate
+    // store candidates count
 
     function Election () public {
-        candidate = "Candidate 1";
+      
     }
 }
